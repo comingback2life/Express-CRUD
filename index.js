@@ -66,6 +66,7 @@ app.patch("/edit/:id", (req, res) => {
 app.delete("/edit/:id", (req, res) => {
     const { id } = req.params;
     const comment = userComments.filter(c => c.id !== id);
+    console.log(`comment ${comment}`);
     res.redirect("/")
 });
 
