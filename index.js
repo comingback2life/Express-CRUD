@@ -12,20 +12,26 @@ const date = new Date().toDateString();
 let userComments = [
     {
         id: getID(),
-        username: "Samip",
-        said: "Hi my name is Samip",
+        username: "Mark Twain",
+        said: `If you tell the truth, you don't have to remember anything.`,
         postedOn: date
     },
     {
         id: getID(),
-        username: "Lenin",
-        said: "I make wonderful ramen",
+        username: "Oscar Wilde",
+        said: "Always forgive your enemies; nothing annoys them so much.",
         postedOn: date
     },
     {
         id: getID(),
-        username: "Hattori",
-        said: "Ding Ding Ding",
+        username: "Friedrich Nietzsche",
+        said: "Without music, life would be a mistake.",
+        postedOn: date
+    },
+    {
+        id: getID(),
+        username: "Friedrich Nietzsche",
+        said: "Without music, life would be a mistake.",
         postedOn: date
     },
     
@@ -36,10 +42,14 @@ app.get("/", (req, res) => {
     res.render("dashboard.ejs",{userComments});
     
 });
-app.get("/edit", (req, res) => {
-    res.render("edit.ejs");
-    
+
+app.get("/edit/:id", (req, res) => {
+    const { id }= req.params;
+    const comment = userComments.find((c) => c.id === { id });
+    console.log(comment);
+    res.render("edit",{comment})
 });
+  
 
 app.get("/new", (req, res) => {
     res.render("createNewPost.ejs");

@@ -9,7 +9,7 @@
     <% for( let contents of userComments ) { %>
     <div class="card-body">
       <blockquote class="blockquote mb-0">
-        <a href="/edit"><p class="mb-2"><%=contents.said%></p></a>
+          <a href="/edit/<%= contents.id%>"><p class="mb-2"><%=contents.said%></p></a>
         <footer class="blockquote-footer">
           <%= contents.username%> on <%=contents.postedOn%>
         </footer>
