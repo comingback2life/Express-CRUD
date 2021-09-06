@@ -1,0 +1,21 @@
+<%- include ('partials/head') %>
+<div class="container">
+  <div class="position-relative">
+    <form action="/new" method="GET" class="d-flex mb-3 justify-content-end">
+      <button type="submit" class="btn btn-primary mt-2">Say Something</button>
+    </form>
+  </div>
+  <div class="card">
+    <% for( let contents of userComments ) { %>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <a href="/edit"><p class="mb-2"><%=contents.said%></p></a>
+        <footer class="blockquote-footer">
+          <%= contents.username%> on <%=contents.postedOn%>
+        </footer>
+      </blockquote>
+    </div>
+    <% } %>
+  </div>
+</div>
+<%- include("partials/footer")%>

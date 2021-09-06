@@ -1,0 +1,20 @@
+<%- include ('partials/head') %>
+<div class="container">
+  <form>
+    <div class="mb-3">
+      <label for="username" class="form-label">Username</label>
+      <input
+        type="text"
+        class="form-control"
+        id="username"
+        aria-describedby="Enter your username"
+      />
+      <div id="emailHelp" class="form-text">Enter any username here.</div>
+    </div>
+    <div class="mb-3">
+      <label for="saySomething" class="form-label">Say Something</label>
+      <input type="text" class="form-control" id="saySomething" />
+    </div>
+    <button type="submit" class="btn btn-primary">Post</button>
+  </form>
+</div>
