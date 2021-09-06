@@ -44,13 +44,12 @@ app.get("/", (req, res) => {
 });
 
 app.get("/edit/:id", (req, res) => {
-    const { id }= req.params;
-    const comment = userComments.find((c) => c.id === { id });
+    const { id } = req.params;
+    const comment = userComments.find(c => c.id === id);
     console.log(comment);
     res.render("edit",{comment})
 });
   
-
 app.get("/new", (req, res) => {
     res.render("createNewPost.ejs");
     

@@ -1,10 +1,9 @@
 <%-include("partials/head")%>
 <div class="container">
- 
   <form>
     <div class="mb-3">
       <label for="editPost" class="form-label">Edit Post</label>
-      <textarea class="form-control" id="editPost" rows="3"> <%= comment%></textarea>
+      <textarea class="form-control" id="editPost" rows="3"> <%=comment.said%></textarea>
     </div>
     <button type="submit" class="btn btn-primary">Edit</button>
     <form action="/new" method="GET" class="d-flex mb-3 justify-content-end">
