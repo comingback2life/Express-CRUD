@@ -52,7 +52,6 @@ app.post("/", (req, res) => {
 app.get("/edit/:id", (req, res) => {
     const { id } = req.params;
     const comment = userComments.find(c => c.id === id);
-    console.log(comment);
     res.render("edit",{comment})
 });
 
@@ -65,8 +64,9 @@ app.patch("/edit/:id", (req, res) => {
 });
 app.delete("/edit/:id", (req, res) => {
     const { id } = req.params;
-    const comment = userComments.filter(c => c.id !== id);
-    console.log(`comment ${comment}`);
+    console.log(id);
+    const comment = userComments.filter((c) => c.id !== id); //filter from array where id does not match
+    userComments = comment;
     res.redirect("/")
 });
 
